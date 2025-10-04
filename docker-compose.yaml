@@ -1,0 +1,53 @@
+services:
+  evolution-api:
+    container_name: evolution_api
+    image: atendai/evolution-api:v1.8.2
+    restart: always
+    ports:
+      - "8090:8080"
+    env_file:
+      - .env
+    volumes:
+      - evolution_store:/evolution/store
+      - evolution_instances:/evolution/instances
+  db:
+    image: postgres:15-alpine
+    container_name: realmate-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "${DATABASE_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - realmate-network
+
+  web:
+    build: .
+    container_name: realmate-django
+    restart: unless-stopped
+    command: >
+      sh -c "python manage.py migrate && 
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_HOST=db
+    depends_on:
+      - db
+    networks:
+      - realmate-network
+
+volumes:
+  postgres_data:
+  evolution_store:
+  evolution_instances:
+
+networks:
+  realmate-network:
+    driver: bridge
