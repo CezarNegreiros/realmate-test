@@ -144,4 +144,5 @@ https://unorderly-catalytical-samson.ngrok-free.dev
 ```
 - Coloque o `/webhook` ao final da `url`
 - Em `eventos`, selecione `MESSAGES_UPSERT`
+- Selecione a checkbox de `Webhook por eventos`
 - Salve. Pronto, webhook configurado!
