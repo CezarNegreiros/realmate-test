@@ -112,29 +112,29 @@ Forwarding      [https://c8b7-2804-14d-5494-7b10-....ngrok-free.app](https://c8b
 ### Acessar o Gerenciador de Instâncias
 
 1. Configure a api key:
-No `.venv` você deve colocar um valor em `AUTHENTICATION_API_KEY`, o valor pode ser qualquer um que você preferir
+    - No `.venv` você deve colocar um valor em `AUTHENTICATION_API_KEY`, o valor pode ser qualquer um que você preferir
 
 2. Abra no Navegador:
-Acesse a URL onde o Manager está exposto. Por padrão, é:
+    - Acesse a URL onde o Manager está exposto. Por padrão, é:
 http://localhost:8090/manager
 
 3. Insira a Chave de API:
-Você será solicitado a fornecer a chave de API que você configurou no Passo 1 (AUTHENTICATION_API_KEY).
+    - Você será solicitado a fornecer a chave de API que você configurou no Passo 1 (AUTHENTICATION_API_KEY).
 
 ### Criar e Conectar uma Nova Instância
 - Uma "instância" representa uma conexão com um número de WhatsApp.
 
 1. Crie a Instância:
-- No Manager, clique em `+Instância` para adicionar uma nova instância. Dê a ela um nome descritivo, por exemplo: realmate-tech-test.
-- Selecione a integração `Baileys`
-- Salve a instância
+    - No Manager, clique em `+Instância` para adicionar uma nova instância. Dê a ela um nome descritivo, por exemplo: realmate-tech-test.
+    - Selecione a integração `Baileys`
+    - Salve a instância
 
 2. Conecte ao WhatsApp:
-- Após criar a instância, ela aparecerá na lista. Clique em "Conectar" ou acesse o endpoint de QR code para essa instância.
+    - Após criar a instância, ela aparecerá na lista. Clique em "Conectar" ou acesse o endpoint de QR code para essa instância.
 
-- Abra o aplicativo do WhatsApp no seu celular, vá em Aparelhos conectados e escaneie o QR Code exibido.
+    - Abra o aplicativo do WhatsApp no seu celular, vá em Aparelhos conectados e escaneie o QR Code exibido.
 
-- Aguarde até que o status da instância mude para CONNECTED.
+    - Aguarde até que o status da instância mude para CONNECTED.
 
 ### Configurando o Webhook
 
